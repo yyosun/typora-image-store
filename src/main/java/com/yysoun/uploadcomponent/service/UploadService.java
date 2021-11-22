@@ -1,22 +1,15 @@
 package com.yysoun.uploadcomponent.service;
 
-import com.yysoun.uploadcomponent.config.StorageProperties;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Service
 public class UploadService {
@@ -62,8 +55,7 @@ public class UploadService {
             }
             try {
                 file.transferTo(dest);
-                urls.add("http://localhost:8081/"+ dest.getName());
-//                urls.add("http://localhost:8080/files/goodwork-default-user.png");
+                urls.add("https://www.yyosun.com/typora/"+ dest.getName());
             }catch (IllegalStateException | IOException e){
                 e.printStackTrace();
             }

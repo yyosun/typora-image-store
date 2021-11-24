@@ -51,6 +51,7 @@ public class UploadService {
             if (file.isEmpty()) {
                 throw new RuntimeException("Failed to store empty file.");
             }
+
             String filename = file.getOriginalFilename();
             String suffixName = filename.substring(filename.lastIndexOf("."));
             File dest = new File(System.getProperties().getProperty("user.dir")+ "/" + Paths.get(location).resolve(Paths.get(this.createSecretKey() + suffixName)).toString());

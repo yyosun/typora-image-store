@@ -41,11 +41,9 @@ public class UploadService {
     }
 
     public ArrayList<String> store(List<MultipartFile> files) throws NoSuchAlgorithmException {
-
         ArrayList<String> urls = new ArrayList<>();
 
         for (int i=0; i< files.size(); i++){
-
             MultipartFile file = files.get(i);
             if (file.isEmpty()) {
                 throw new RuntimeException("Failed to store empty file.");

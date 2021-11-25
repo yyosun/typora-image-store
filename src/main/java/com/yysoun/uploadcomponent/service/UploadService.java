@@ -46,6 +46,7 @@ public class UploadService {
 
         for (int i=0; i< files.size(); i++){
             MultipartFile file = files.get(i);
+
             if (file.isEmpty()) {
                 throw new RuntimeException("Failed to store empty file.");
             }

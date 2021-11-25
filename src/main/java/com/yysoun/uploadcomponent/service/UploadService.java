@@ -23,7 +23,6 @@ public class UploadService {
         return secretKey;
     }
     public String encryptMD5(String strIN) throws NoSuchAlgorithmException {
-
         MessageDigest alg = MessageDigest.getInstance("MD5");
         alg.update(strIN.getBytes());
         byte[] bytes = alg.digest();
